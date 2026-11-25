@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="web_standard" name="shell-type">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap"
+    rel="stylesheet">
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary": "#b7131a", "outline": "#906f6c", "error-container": "#ffdad6", "on-primary-fixed-variant": "#93000d", "on-primary-fixed": "#410002", "surface-variant": "#e5e2e1", "outline-variant": "#e4beb9", "secondary": "#b6171e", "secondary-fixed": "#ffdad6", "on-tertiary-fixed": "#241919", "on-secondary-fixed-variant": "#930010", "surface-container": "#f0eded", "on-background": "#1b1c1c", "primary-fixed": "#ffdad6", "surface": "#fcf9f8", "inverse-on-surface": "#f3f0ef", "surface-dim": "#dcd9d9", "on-error-container": "#93000a", "tertiary": "#675859", "tertiary-fixed": "#f2dede", "primary-container": "#db322f", "on-secondary-fixed": "#410003", "surface-bright": "#fcf9f8", "surface-container-low": "#f6f3f2", "on-surface-variant": "#5b403d", "surface-container-high": "#eae7e7", "inverse-surface": "#303030", "tertiary-fixed-dim": "#d5c2c2", "on-surface": "#1b1c1c", "surface-tint": "#bb171c", "on-primary-container": "#fffbff", "surface-container-highest": "#e5e2e1", "on-secondary": "#ffffff", "on-error": "#ffffff", "secondary-fixed-dim": "#ffb3ac", "surface-container-lowest": "#ffffff", "inverse-primary": "#ffb4ac", "tertiary-container": "#817171", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#514344", "on-primary": "#ffffff", "on-secondary-container": "#fffbff", "primary-fixed-dim": "#ffb4ac", "on-tertiary": "#ffffff", "background": "#fcf9f8", "on-tertiary-container": "#fffbff", "secondary-container": "#da3433" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "2rem", "margin-mobile": "1rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "gutter-mobile": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter": "1.5rem" }, "fontFamily": { "label-sm": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-xl-mobile": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "body-md": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "label-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-xl-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "700" }] } } } }</script>
+  <style>
+    * {
+      font-family: 'Inter', sans-serif !important;
+    }
+
+    button,
+    a.rounded-lg,
+    a.rounded-xl,
+    button.rounded-lg,
+    button.rounded-xl,
+    .rounded-lg:where(button, a),
+    .rounded-xl:where(button, a),
+    nav a,
+    [role='button'] {
+      border-radius: 0px !important;
+    }
+  </style>
+  <style>
+    .material-symbols-outlined,
+    .material-icons {
+      font-family: 'Material Symbols Outlined' !important;
+      font-weight: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface">
+  <header
+    class="fixed top-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-20 max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between"><a
+        class="flex items-center gap-space-sm focus:outline-none" data-path="home" href="#">
+        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-sm"><span
+            class="text-on-primary font-headline-sm text-headline-sm font-bold tracking-widest">BOA</span></div>
+        <div class="flex flex-col"><span
+            class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight leading-none">Best of
+            Amravati</span><span
+            class="font-label-sm text-label-sm text-on-surface-variant    tracking-wider mt-space-xs">Directory
+            Portal</span></div>
+      </a>
+      <nav class="hidden lg:flex items-center gap-space-md"
+        data-active-classes="bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-lg"><a
+          class="px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+          data-path="home" href="#">Home</a><a
+          class="px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+          data-path="services" href="#">Services</a><a aria-current="page"
+          class="px-space-md py-space-sm transition-colors bg-primary-container text-on-primary-container font-label-lg text-label-lg"
+          data-path="business" href="#">Business</a><a
+          class="px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+          data-path="about-us" href="#">About Us</a><a
+          class="px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+          data-path="contact" href="#">Contact</a></nav>
+      <div class="flex items-center gap-space-sm"><a
+          class="hidden sm:inline-flex items-center justify-center px-space-md py-space-sm border border-primary text-primary font-label-lg text-label-lg hover:bg-primary hover:text-on-primary transition-all"
+          data-path="join-us" href="#">Join Us</a><a
+          class="inline-flex items-center justify-center px-space-md py-space-sm bg-primary text-on-primary font-label-lg text-label-lg shadow-sm hover:bg-primary-container hover:text-on-primary-container transition-all"
+          data-path="get-started" href="#">Get Started</a>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span
+            class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+      </div>
+    </div>
+  </header>
+  <main class="w-full pt-20 bg-surface">
+    <div class="flex flex-col w-full bg-surface-container-lowest">
+      <!-- Top Breadcrumb / Category Bar -->
+      <div class="w-full bg-surface-container-lowest shadow-sm">
+        <div
+          class="max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-sm flex items-center gap-space-xs text-on-surface-variant">
+          <a class="font-label-md text-label-md hover:text-primary transition-colors flex items-center gap-1" href="#">
+            <span class="material-symbols-outlined text-[16px]">home</span>
+            <span>Amravati</span>
+          </a>
+          <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+          <a class="font-label-md text-label-md hover:text-primary transition-colors" href="#">IT &amp; Software
+            Companies</a>
+          <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+          <span class="font-label-md text-label-md text-on-surface font-semibold truncate">BIZONANCE INDIA PVT.
+            LTD.</span>
+        </div>
+      </div>
+      <!-- Main Profile Container -->
+      <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin py-space-md w-full">
+        <!-- Hero / Banner Card -->
+        <div class="relative w-full rounded-xl overflow-hidden bg-surface shadow-md">
+          <!-- Modern stylish interior banner -->
+          <div class="w-full h-56 md:h-72 lg:h-80 bg-cover bg-center relative"
+            data-alt="Wide ultra modern software company headquarters in Amravati with sleek architectural glass partitions, warm crimson accent LED lighting, dark slate polished minimalist interior, high tech workspace environment, cinematic architectural photography."
+            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLpzv-wXuBGGUJ4UaQfJsZ6wKMDkvosj75heXfXhHeJN54cdTon2pE_S4V0qzcs74BKLQqDSDsN3NLgln4jpPfcQxtyJbG6vGmp1WKUPVZhiQ6sHNXbjJUJwtuGP8NDWoee9ljc8svYJniwXWVCD3cPD3T7LJHXjRexC3xxas66Yfc5J1NhHF3LryViiBUaBA6sbrRnAvRvm5RfQbRflqR0RodVGnknoAxulcofHAT')">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>
+            <div class="absolute top-4 right-4 flex items-center gap-space-xs">
+              <span
+                class="inline-flex items-center gap-1 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded-full text-on-surface font-label-sm text-label-sm shadow-sm">
+                <span class="material-symbols-outlined text-primary text-[15px]">photo_camera</span>
+                <span>12 Photos</span>
+              </span>
+              <span
+                class="inline-flex items-center gap-1 bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm shadow-sm">
+                <span class="material-symbols-outlined text-[15px]"
+                  style="font-variation-settings: 'FILL' 1;">verified</span>
+                <span>BOA Verified Business</span>
+              </span>
+            </div>
+          </div>
+          <!-- Identity Header Block (Overlapping) -->
+          <div class="px-space-md md:px-space-xl pb-space-lg pt-0 relative bg-surface-container-lowest">
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between gap-space-md -mt-16 md:-mt-20 mb-space-md">
+              <div class="flex flex-col sm:flex-row sm:items-end gap-space-md">
+                <!-- Business Avatar Card -->
+                <div
+                  class="relative w-28 h-28 md:w-36 md:h-36 rounded-xl bg-surface-container-lowest p-2 shadow-xl flex items-center justify-center shrink-0">
+                  <div
+                    class="w-full h-full rounded-lg bg-gradient-to-br from-primary via-primary-container to-secondary flex flex-col items-center justify-center text-on-primary relative overflow-hidden shadow-inner">
+                    <span
+                      class="font-headline-xl text-headline-xl font-extrabold tracking-tighter leading-none select-none text-on-primary">B</span><span
+                      class="font-label-sm text-label-sm    tracking-widest text-on-primary/90 mt-0.5">INDIA</span>
+                  </div>
+                  <div
+                    class="absolute -top-1 -right-1 bg-primary text-on-primary w-7 h-7 rounded-full flex items-center justify-center shadow-md">
+                    <span class="material-symbols-outlined text-[16px] text-on-primary"
+                      style="font-variation-settings: 'FILL' 1;">verified</span></div>
+                </div>
+                <!-- Title & Basic Metadata -->
+                <div class="flex flex-col">
+                  <div class="flex items-center flex-wrap gap-2">
+                    <h1 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">
+                      BIZONANCE INDIA PVT. LTD.</h1>
+                    <span class="inline-flex items-center text-primary" title="Verified Business">
+                      <span class="material-symbols-outlined text-[24px]"
+                        style="font-variation-settings: 'FILL' 1;">verified</span>
+                    </span>
+                  </div>
+                  <!-- Rating Badge & Reviews -->
+                  <div class="flex items-center flex-wrap gap-space-sm mt-1">
+                    <div
+                      class="inline-flex items-center gap-1 bg-primary text-on-primary px-2.5 py-0.5 rounded font-label-md text-label-md shadow-xs">
+                      <span>5.0</span>
+                      <span class="material-symbols-outlined text-[14px]"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <div class="flex text-primary">
+                      <span class="material-symbols-outlined text-[18px]"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span class="material-symbols-outlined text-[18px]"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span class="material-symbols-outlined text-[18px]"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span class="material-symbols-outlined text-[18px]"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span class="material-symbols-outlined text-[18px]"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <span class="font-label-md text-label-md text-on-surface-variant font-medium">47 BIZONACE
+                      Reviews</span>
+                    <span class="text-outline-variant">•</span>
+                    <span class="font-label-md text-label-md text-primary font-semibold">Top Rated IT Firm</span>
+                  </div>
+                  <!-- Subtitle & Category -->
+                  <p class="font-label-lg text-label-lg text-tertiary mt-1 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-primary text-[18px]">domain</span>
+                    <span class="font-semibold text-on-surface">Software Company in Amravati, Maharashtra</span>
+                  </p>
+                </div>
+              </div>
+              <!-- Quick Operating Status -->
+              <div class="flex flex-col sm:items-end justify-center">
+                <div class="inline-flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg shadow-xs">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
+                  <span class="font-label-md text-label-md text-emerald-800 font-bold">Open</span>
+                  <span class="text-tertiary">•</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant">Closes 7 pm</span>
+                  <span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span>
+                </div>
+                <span class="font-label-sm text-label-sm text-tertiary mt-1">Mon – Sat (10:00 AM – 7:00 PM)</span>
+              </div>
+            </div>
+            <!-- Tagline & Description Banner -->
+            <div class="bg-surface-container-low p-space-md rounded-xl shadow-xs mb-space-md">
+              <p class="font-headline-sm text-headline-sm text-primary font-bold mb-1">
+                The Special Kind of Business Reinforcement
+              </p>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                End-to-End Business Solutions for Startups &amp; Growing Enterprises • Custom Software • Cloud Apps •
+                Digital Marketing &amp; SEO • Branding • Legal Services
+              </p>
+              <div class="flex items-start gap-2 mt-3 pt-3 border-t border-surface-container-high/60">
+                <span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">location_on</span>
+                <span class="font-body-md text-body-md text-on-surface">
+                  📍 Ravi Kiran, near Delhi Public School, Colony, Saturna, Amravati, Maharashtra 444605
+                </span>
+              </div>
+            </div>
+            <!-- Action Buttons Row -->
+            <div class="flex flex-wrap items-center gap-space-sm"><a
+                class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center shadow-xs hover:bg-primary hover:text-on-primary transition-all"
+                href="https://instagram.com" rel="noopener noreferrer" target="_blank" title="Instagram"><span
+                  class="material-symbols-outlined text-[20px]">photo_camera</span></a><a
+                class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center shadow-xs hover:bg-primary hover:text-on-primary transition-all"
+                href="https://linkedin.com" rel="noopener noreferrer" target="_blank" title="LinkedIn"><span
+                  class="material-symbols-outlined text-[20px]">business_center</span></a><a
+                class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center shadow-xs hover:bg-primary hover:text-on-primary transition-all"
+                href="https://facebook.com" rel="noopener noreferrer" target="_blank" title="Facebook"><span
+                  class="material-symbols-outlined text-[20px]">public</span></a><a
+                class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center shadow-xs hover:bg-primary hover:text-on-primary transition-all"
+                href="https://youtube.com" rel="noopener noreferrer" target="_blank" title="YouTube"><span
+                  class="material-symbols-outlined text-[20px]">play_circle</span></a><a
+                class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center shadow-xs hover:bg-primary hover:text-on-primary transition-all"
+                href="https://twitter.com" rel="noopener noreferrer" target="_blank" title="X (Twitter)"><span
+                  class="material-symbols-outlined text-[20px]">tag</span></a></div>
+          </div>
+        </div>
+        <!-- Navigation Tabs -->
+        <div class="mt-space-lg mb-space-md flex items-center gap-2 overflow-x-auto pb-2">
+          <button
+            class="px-space-lg py-2.5 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg shadow-sm shrink-0 flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">mobile_arrow_right</span>
+            <span>Services</span>
+          </button>
+          <button
+            class="px-space-lg py-2.5 rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg shadow-xs hover:bg-surface-container transition-colors shrink-0 flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">inventory_2</span>
+            <span>Products</span>
+          </button>
+          <button
+            class="px-space-lg py-2.5 rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg shadow-xs hover:bg-surface-container transition-colors shrink-0 flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">photo_library</span>
+            <span>Photos</span>
+          </button>
+          <button
+            class="px-space-lg py-2.5 rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg shadow-xs hover:bg-surface-container transition-colors shrink-0 flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">smart_display</span>
+            <span>Videos</span>
+          </button>
+        </div>
+        <!-- Content Grid Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+          <!-- Left Column (8 Cols): Services & Reviews -->
+          <div class="lg:col-span-8 flex flex-col gap-space-lg">
+            <!-- Our Services Card -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md">
+              <div class="flex items-center justify-between flex-wrap gap-2 mb-space-md">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[24px]">hub</span>
+                  <h2 class="font-headline-md text-headline-md text-on-surface font-bold">
+                    Our Services <span class="font-headline-sm text-headline-sm text-tertiary font-normal">(8 Categories
+                      • 63+ Specializations)</span>
+                  </h2>
+                </div>
+                <button
+                  class="font-label-lg text-label-lg text-primary hover:text-primary-container font-semibold transition-colors"
+                  id="expandAllBtn">
+                  Expand All
+                </button>
+              </div>
+              <!-- Category 1: Software Company (Expanded) -->
+              <div class="bg-surface-container-low rounded-xl p-space-md shadow-xs mb-space-md">
+                <div class="flex items-center justify-between pb-space-sm border-b border-surface-container-high/60">
+                  <div class="flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center">
+                      <span class="material-symbols-outlined text-[18px]">terminal</span>
+                    </span>
+                    <span class="font-headline-sm text-headline-sm text-on-surface font-bold">Software Company</span>
+                    <span
+                      class="font-label-sm text-label-sm bg-primary/10 text-primary px-2.5 py-0.5 rounded-full font-semibold">11
+                      services available</span>
+                  </div>
+                  <span class="material-symbols-outlined text-primary text-[20px]">expand_less</span>
+                </div>
+                <!-- Chips / Pills grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 pt-space-md">
+                  <div
+                    class="flex items-center gap-2 bg-surface-container-lowest px-3 py-2 rounded-lg shadow-xs hover:shadow-sm transition-shadow">
+                    <span class="material-symbols-outlined text-primary text-[18px]"
+                      style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-label-md text-label-md text-on-surface font-medium">Application development</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-surface-container-lowest px-3 py-2 rounded-lg shadow-xs hover:shadow-sm transition-shadow">
+                    <span class="material-symbols-outlined text-primary text-[18px]"
+                      style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-label-md text-label-md text-on-surface font-medium">Business to Business</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-surface-container-lowest px-3 py-2 rounded-lg shadow-xs hover:shadow-sm transition-shadow">
+                    <span class="material-symbols-outlined text-primary text-[18px]"
+                      style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-label-md text-label-md text-on-surface font-medium">Cloud services</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-surface-container-lowest px-3 py-2 rounded-lg shadow-xs hover:shadow-sm transition-shadow">
+                    <span class="material-symbols-outlined text-primary text-[18px]"
+                      style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-label-md text-label-md text-on-surface font-medium">Enterprise software
+                      development</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-surface-container-lowest px-3 py-2 rounded-lg shadow-xs hover:shadow-sm transition-shadow">
+                    <span class="material-symbols-outlined text-primary text-[18px]"
+                      style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-label-md text-label-md text-on-surface font-medium">IT consulting</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-surface-container-lowest px-3 py-2 rounded-lg shadow-xs hover:shadow-sm transition-shadow">
+                    <span class="material-symbols-outlined text-primary text-[18px]"
+                      style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-label-md text-label-md text-on-surface font-medium">Mobile app development</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-surface-container-lowest px-3 py-2 rounded-lg shadow-xs hover:shadow-sm transition-shadow">
+                    <span class="material-symbols-outlined text-primary text-[18px]"
+                      style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-label-md text-label-md text-on-surface font-medium">Software consulting</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-surface-container-lowest px-3 py-2 rounded-lg shadow-xs hover:shadow-sm transition-shadow">
+                    <span class="material-symbols-outlined text-primary text-[18px]"
+                      style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-label-md text-label-md text-on-surface font-medium">Software development</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-surface-container-lowest px-3 py-2 rounded-lg shadow-xs hover:shadow-sm transition-shadow">
+                    <span class="material-symbols-outlined text-primary text-[18px]"
+                      style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-label-md text-label-md text-on-surface font-medium">Software development
+                      outsourcing</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-surface-container-lowest px-3 py-2 rounded-lg shadow-xs hover:shadow-sm transition-shadow">
+                    <span class="material-symbols-outlined text-primary text-[18px]"
+                      style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-label-md text-label-md text-on-surface font-medium">Solution consulting</span>
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-surface-container-lowest px-3 py-2 rounded-lg shadow-xs hover:shadow-sm transition-shadow">
+                    <span class="material-symbols-outlined text-primary text-[18px]"
+                      style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span class="font-label-md text-label-md text-on-surface font-medium">Ecommerce services</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Category 2: Marketing Agency (Collapsed) -->
+              <div
+                class="bg-surface-container-low rounded-xl p-space-md shadow-xs mb-space-sm cursor-pointer hover:bg-surface-container transition-colors flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">campaign</span>
+                  </span>
+                  <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Marketing Agency</span>
+                  <span
+                    class="font-label-sm text-label-sm bg-surface-container-highest text-on-surface-variant px-2.5 py-0.5 rounded-full">19
+                    services available</span>
+                </div>
+                <span class="material-symbols-outlined text-on-surface-variant text-[20px]">expand_more</span>
+              </div>
+              <!-- Category 3: Advertising Agency (Collapsed) -->
+              <div
+                class="bg-surface-container-low rounded-xl p-space-md shadow-xs cursor-pointer hover:bg-surface-container transition-colors flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[18px]">ads_click</span>
+                  </span>
+                  <span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Advertising
+                    Agency</span>
+                  <span
+                    class="font-label-sm text-label-sm bg-surface-container-highest text-on-surface-variant px-2.5 py-0.5 rounded-full">4
+                    services available</span>
+                </div>
+                <span class="material-symbols-outlined text-on-surface-variant text-[20px]">expand_more</span>
+              </div>
+            </div>
+            <!-- Reviews Section -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md" id="reviews-section">
+              <div
+                class="flex items-center justify-between flex-wrap gap-2 pb-space-md mb-space-md border-b border-surface-container-high/60">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[24px]"
+                    style="font-variation-settings: 'FILL' 1;">star</span>
+                  <h2 class="font-headline-md text-headline-md text-on-surface font-bold">
+                    Reviews <span class="font-headline-sm text-headline-sm text-tertiary font-normal">(5.0 ★ 47 verified
+                      reviews)</span>
+                  </h2>
+                </div>
+                <a class="font-label-lg text-label-lg text-primary hover:text-primary-container font-semibold flex items-center gap-1 transition-colors"
+                  href="#write-review">
+                  <span>Write a review</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </a>
+              </div>
+              <!-- Rating Breakdown Header -->
+              <div
+                class="grid grid-cols-1 sm:grid-cols-12 gap-space-md p-space-md bg-surface-container-low rounded-xl mb-space-lg items-center">
+                <div
+                  class="sm:col-span-4 flex flex-col items-center justify-center text-center sm:border-r border-surface-container-high/70 sm:pr-space-md">
+                  <span class="font-headline-xl text-headline-xl font-extrabold text-on-surface leading-none">5.0</span>
+                  <div class="flex text-primary my-1">
+                    <span class="material-symbols-outlined text-[18px]"
+                      style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px]"
+                      style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px]"
+                      style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px]"
+                      style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px]"
+                      style="font-variation-settings: 'FILL' 1;">star</span>
+                  </div>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">All 47 Customers rated 5
+                    Stars</span>
+                </div>
+                <div class="sm:col-span-8 flex flex-col gap-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-sm text-label-sm text-on-surface w-10">5 stars</span>
+                    <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                      <div class="bg-primary h-full rounded-full" style="width: 100%"></div>
+                    </div>
+                    <span class="font-label-sm text-label-sm text-tertiary w-8 text-right">47</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-sm text-label-sm text-tertiary w-10">4 stars</span>
+                    <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                      <div class="bg-primary h-full rounded-full" style="width: 0%"></div>
+                    </div>
+                    <span class="font-label-sm text-label-sm text-tertiary w-8 text-right">0</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-sm text-label-sm text-tertiary w-10">3 stars</span>
+                    <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                      <div class="bg-primary h-full rounded-full" style="width: 0%"></div>
+                    </div>
+                    <span class="font-label-sm text-label-sm text-tertiary w-8 text-right">0</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-sm text-label-sm text-tertiary w-10">2 stars</span>
+                    <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                      <div class="bg-primary h-full rounded-full" style="width: 0%"></div>
+                    </div>
+                    <span class="font-label-sm text-label-sm text-tertiary w-8 text-right">0</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-label-sm text-label-sm text-tertiary w-10">1 star</span>
+                    <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                      <div class="bg-primary h-full rounded-full" style="width: 0%"></div>
+                    </div>
+                    <span class="font-label-sm text-label-sm text-tertiary w-8 text-right">0</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Customer Review Cards List (1-10) -->
+              <div class="flex flex-col gap-space-md">
+                <!-- Review 1 -->
+                <div class="p-space-md rounded-xl bg-surface-container-low shadow-xs hover:shadow-sm transition-shadow">
+                  <div class="flex items-start justify-between gap-space-sm mb-2">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-primary text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center">
+                        A
+                      </div>
+                      <div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Aashish Nagdive</h3>
+                        <div class="flex items-center gap-2">
+                          <div class="flex text-primary">
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                          </div>
+                          <span class="font-label-sm text-label-sm text-tertiary">4 months ago</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[11px] font-semibold">
+                      <span class="material-symbols-outlined text-[13px]">verified</span>
+                      Verified Client
+                    </span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    "Thank you, Aashish Nagdive, for your 5-star rating and support for BIZONANCE. Highly recommend them
+                    for tech projects and cloud support in Amravati."
+                  </p>
+                </div>
+                <!-- Review 2 -->
+                <div class="p-space-md rounded-xl bg-surface-container-low shadow-xs hover:shadow-sm transition-shadow">
+                  <div class="flex items-start justify-between gap-space-sm mb-2">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center">
+                        I
+                      </div>
+                      <div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Imagine Creative
+                          Photography</h3>
+                        <div class="flex items-center gap-2">
+                          <div class="flex text-primary">
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                          </div>
+                          <span class="font-label-sm text-label-sm text-tertiary">a year ago</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[11px] font-semibold">
+                      <span class="material-symbols-outlined text-[13px]">verified</span>
+                      Verified Client
+                    </span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    "We recently availed digital marketing services from BIZONANCE for our photography business. Their
+                    campaigns elevated our direct inquiries significantly."
+                  </p>
+                </div>
+                <!-- Review 3 -->
+                <div class="p-space-md rounded-xl bg-surface-container-low shadow-xs hover:shadow-sm transition-shadow">
+                  <div class="flex items-start justify-between gap-space-sm mb-2">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary font-headline-sm text-headline-sm font-bold flex items-center justify-center">
+                        D
+                      </div>
+                      <div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Dhananjay Bhakare</h3>
+                        <div class="flex items-center gap-2">
+                          <div class="flex text-primary">
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                          </div>
+                          <span class="font-label-sm text-label-sm text-tertiary">a year ago</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[11px] font-semibold">
+                      <span class="material-symbols-outlined text-[13px]">verified</span>
+                      Verified Client
+                    </span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    "BIZONANCE did an amazing job creating a website for my business. Crisp UI, timely delivery and
+                    exceptional ongoing support!"
+                  </p>
+                </div>
+                <!-- Review 4 -->
+                <div class="p-space-md rounded-xl bg-surface-container-low shadow-xs hover:shadow-sm transition-shadow">
+                  <div class="flex items-start justify-between gap-space-sm mb-2">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-secondary text-on-secondary font-headline-sm text-headline-sm font-bold flex items-center justify-center">
+                        M
+                      </div>
+                      <div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">MR Juned</h3>
+                        <div class="flex items-center gap-2">
+                          <div class="flex text-primary">
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                          </div>
+                          <span class="font-label-sm text-label-sm text-tertiary">a year ago</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[11px] font-semibold">
+                      <span class="material-symbols-outlined text-[13px]">verified</span>
+                      Verified Client
+                    </span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    "Best guidance. Thank you team Bizonance for assisting with phone number verification and setting up
+                    our local business setup smoothly."
+                  </p>
+                </div>
+                <!-- Review 5 -->
+                <div class="p-space-md rounded-xl bg-surface-container-low shadow-xs hover:shadow-sm transition-shadow">
+                  <div class="flex items-start justify-between gap-space-sm mb-2">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-primary text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center">
+                        D
+                      </div>
+                      <div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Dinesh Pawar</h3>
+                        <div class="flex items-center gap-2">
+                          <div class="flex text-primary">
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                          </div>
+                          <span class="font-label-sm text-label-sm text-tertiary">2 years ago</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[11px] font-semibold">
+                      <span class="material-symbols-outlined text-[13px]">verified</span>
+                      Verified Client
+                    </span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    "I recently had the pleasure of working with BIZONANCE, and I am thoroughly impressed with their
+                    software development lifecycle and dedication."
+                  </p>
+                </div>
+                <!-- Review 6 -->
+                <div class="p-space-md rounded-xl bg-surface-container-low shadow-xs hover:shadow-sm transition-shadow">
+                  <div class="flex items-start justify-between gap-space-sm mb-2">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center">
+                        Q
+                      </div>
+                      <div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Quick Creation</h3>
+                        <div class="flex items-center gap-2">
+                          <div class="flex text-primary">
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                          </div>
+                          <span class="font-label-sm text-label-sm text-tertiary">2 years ago</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[11px] font-semibold">
+                      <span class="material-symbols-outlined text-[13px]">verified</span>
+                      Verified Client
+                    </span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    "Grate Services for Digital marketing. Excellent strategy and execution by Bizonance."
+                  </p>
+                </div>
+                <!-- Review 7 -->
+                <div class="p-space-md rounded-xl bg-surface-container-low shadow-xs hover:shadow-sm transition-shadow">
+                  <div class="flex items-start justify-between gap-space-sm mb-2">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary font-headline-sm text-headline-sm font-bold flex items-center justify-center">
+                        Y
+                      </div>
+                      <div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Yash Dubey</h3>
+                        <div class="flex items-center gap-2">
+                          <div class="flex text-primary">
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                          </div>
+                          <span class="font-label-sm text-label-sm text-tertiary">3 years ago</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[11px] font-semibold">
+                      <span class="material-symbols-outlined text-[13px]">verified</span>
+                      Verified Client
+                    </span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    "Great experience working with Bizonance team. Very prompt and professional service."
+                  </p>
+                </div>
+                <!-- Review 8 -->
+                <div class="p-space-md rounded-xl bg-surface-container-low shadow-xs hover:shadow-sm transition-shadow">
+                  <div class="flex items-start justify-between gap-space-sm mb-2">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-secondary text-on-secondary font-headline-sm text-headline-sm font-bold flex items-center justify-center">
+                        N
+                      </div>
+                      <div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Noman Mansuri</h3>
+                        <div class="flex items-center gap-2">
+                          <div class="flex text-primary">
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                          </div>
+                          <span class="font-label-sm text-label-sm text-tertiary">3 years ago</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[11px] font-semibold">
+                      <span class="material-symbols-outlined text-[13px]">verified</span>
+                      Verified Client
+                    </span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    "Best Google business manager in the region. Highly recommended!"
+                  </p>
+                </div>
+                <!-- Review 9 -->
+                <div class="p-space-md rounded-xl bg-surface-container-low shadow-xs hover:shadow-sm transition-shadow">
+                  <div class="flex items-start justify-between gap-space-sm mb-2">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-primary text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center">
+                        A
+                      </div>
+                      <div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">ASLAM KHAN</h3>
+                        <div class="flex items-center gap-2">
+                          <div class="flex text-primary">
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                          </div>
+                          <span class="font-label-sm text-label-sm text-tertiary">3 years ago</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[11px] font-semibold">
+                      <span class="material-symbols-outlined text-[13px]">verified</span>
+                      Verified Client
+                    </span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    "Best google business agency in amravati."
+                  </p>
+                </div>
+                <!-- Review 10 -->
+                <div class="p-space-md rounded-xl bg-surface-container-low shadow-xs hover:shadow-sm transition-shadow">
+                  <div class="flex items-start justify-between gap-space-sm mb-2">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center">
+                        S
+                      </div>
+                      <div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Sagar Bahadurkar</h3>
+                        <div class="flex items-center gap-2">
+                          <div class="flex text-primary">
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[16px]"
+                              style="font-variation-settings: 'FILL' 1;">star</span>
+                          </div>
+                          <span class="font-label-sm text-label-sm text-tertiary">3 years ago</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="inline-flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[11px] font-semibold">
+                      <span class="material-symbols-outlined text-[13px]">verified</span>
+                      Verified Client
+                    </span>
+                  </div>
+                  <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    "Best google business agency. I am happy with services provided by team bizonance."
+                  </p>
+                </div>
+              </div>
+              <!-- Reviews Pagination -->
+              <div
+                class="flex items-center justify-between pt-space-lg mt-space-md border-t border-surface-container-high/60">
+                <span class="font-label-md text-label-md text-on-surface-variant">Showing 1-10 of 47 reviews</span>
+                <div class="flex items-center gap-1">
+                  <button
+                    class="w-9 h-9 rounded-lg bg-surface-container-low text-tertiary flex items-center justify-center hover:bg-surface-container-high transition-colors disabled:opacity-40"
+                    disabled="">
+                    <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                  </button>
+                  <button
+                    class="w-9 h-9 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center shadow-xs">1</button>
+                  <button
+                    class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">2</button>
+                  <button
+                    class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">3</button>
+                  <button
+                    class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">4</button>
+                  <button
+                    class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors">5</button>
+                  <button
+                    class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right Column (4 Cols): About Us, Quick Info & Socials -->
+          <div class="lg:col-span-4 flex flex-col gap-space-lg">
+            <!-- About Us Card -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md">
+              <div class="flex items-center gap-2 mb-space-sm pb-space-xs border-b border-surface-container-high/60">
+                <span class="material-symbols-outlined text-primary text-[22px]">assignment</span>
+                <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">About Us</h2>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed text-justify">
+                We are BIZONANCE INDIA PVT. LTD., specially recognized across India for The Special Kind of Business
+                Reinforcement. Founded in 2020 in Amravati, Maharashtra, we empower startups, small businesses, and
+                enterprise organizations to achieve sustainable global growth. As a premier internet and IT consultancy
+                firm, we offer end-to-end digital transformation solutions — including Custom Software &amp; Mobile App
+                Development, Cloud Architecture, Digital Marketing, SEO Optimization, Brand Identity &amp; UI/UX Design,
+                Corporate Legal Services, and Outcome-Based Industrial Training. Our mission is to bridge technical
+                excellence with business strategy, ensuring every client gains a competitive advantage through scalable
+                technology, high-impact marketing, and 24/7 dedicated support.
+              </p>
+              <!-- Key Highlights Mini Grid -->
+              <div class="grid grid-cols-2 gap-2 mt-space-md pt-space-md border-t border-surface-container-high/60">
+                <div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col">
+                  <span class="font-label-sm text-label-sm text-tertiary">Established</span>
+                  <span class="font-headline-sm text-headline-sm text-on-surface font-bold">2020</span>
+                </div>
+                <div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col">
+                  <span class="font-label-sm text-label-sm text-tertiary">HQ Location</span>
+                  <span class="font-headline-sm text-headline-sm text-on-surface font-bold">Amravati</span>
+                </div>
+                <div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col">
+                  <span class="font-label-sm text-label-sm text-tertiary">Customer Score</span>
+                  <span class="font-headline-sm text-headline-sm text-primary font-bold">5.0 / 5.0</span>
+                </div>
+                <div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col">
+                  <span class="font-label-sm text-label-sm text-tertiary">Certifications</span>
+                  <span class="font-headline-sm text-headline-sm text-on-surface font-bold">MCA / ISO</span>
+                </div>
+              </div>
+            </div>
+            <!-- Follow Us Card -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md">
+              <div class="flex items-center gap-2 mb-space-sm pb-space-xs border-b border-surface-container-high/60">
+                <span class="material-symbols-outlined text-primary text-[22px]">share</span>
+                <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Follow Us</h2>
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+                Connect with BIZONANCE across active official digital networks for technical insights, project releases,
+                and industry updates.
+              </p>
+              <div class="flex items-center gap-space-sm flex-wrap"><a
+                  class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center shadow-xs hover:bg-primary hover:text-on-primary transition-all"
+                  href="https://instagram.com" rel="noopener noreferrer" target="_blank" title="Instagram"><span
+                    class="material-symbols-outlined text-[20px]">photo_camera</span></a><a
+                  class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center shadow-xs hover:bg-primary hover:text-on-primary transition-all"
+                  href="https://linkedin.com" rel="noopener noreferrer" target="_blank" title="LinkedIn"><span
+                    class="material-symbols-outlined text-[20px]">business_center</span></a><a
+                  class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center shadow-xs hover:bg-primary hover:text-on-primary transition-all"
+                  href="https://facebook.com" rel="noopener noreferrer" target="_blank" title="Facebook"><span
+                    class="material-symbols-outlined text-[20px]">public</span></a><a
+                  class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center shadow-xs hover:bg-primary hover:text-on-primary transition-all"
+                  href="https://youtube.com" rel="noopener noreferrer" target="_blank" title="YouTube"><span
+                    class="material-symbols-outlined text-[20px]">play_circle</span></a><a
+                  class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center shadow-xs hover:bg-primary hover:text-on-primary transition-all"
+                  href="https://twitter.com" rel="noopener noreferrer" target="_blank" title="X (Twitter)"><span
+                    class="material-symbols-outlined text-[20px]">tag</span></a></div>
+            </div>
+            <!-- Location Map Card -->
+            <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md" id="location-map">
+              <div
+                class="flex items-center justify-between mb-space-sm pb-space-xs border-b border-surface-container-high/60">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[22px]">pin_drop</span>
+                  <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Office Location</h2>
+                </div>
+                <span class="font-label-sm text-label-sm text-tertiary">Saturna, Amravati</span>
+              </div>
+              <div class="w-full h-48 bg-cover bg-center rounded-lg shadow-inner relative overflow-hidden"
+                data-location="Saturna, Amravati, Maharashtra 444605"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_BahIVEVjZF2BxSnnvinALUhPRu1CdMvNUIOKn8_uyvPn6x8qmvbrClDrmJVGEy9ZAQM7ocJWNR7dkrMAUmsASIAiZBF7TKArh1YSa93yM8biilt6jVv4KigXCcj_agD9GLSN_Zb9fQmPUkywV93t8q6Ea08YktvUsXVQnaq6BWmBsI7b0s_MuJIXqSav5aQenVV81hnTpkh6r5rTedCOGjvgGY_bPNfVxBz1Va-k')">
+                <div class="absolute inset-0 bg-primary/10 flex items-center justify-center pointer-events-none">
+                  <div
+                    class="bg-primary text-on-primary p-2.5 rounded-full shadow-lg flex items-center justify-center animate-bounce">
+                    <span class="material-symbols-outlined text-[22px]"
+                      style="font-variation-settings: 'FILL' 1;">location_on</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-space-md text-on-surface-variant font-body-sm text-body-sm leading-snug">
+                <strong class="text-on-surface block font-semibold mb-1">BIZONANCE INDIA PVT. LTD.</strong>
+                Ravi Kiran, near Delhi Public School, Colony, Saturna, Amravati, Maharashtra 444605
+              </div>
+              <a class="mt-space-md w-full inline-flex items-center justify-center gap-2 py-2 rounded-lg bg-surface-container-low text-primary font-label-md text-label-md font-semibold hover:bg-primary hover:text-on-primary transition-all"
+                href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+                <span class="material-symbols-outlined text-[16px]">map</span>
+                <span>Open in Google Maps</span>
+              </a>
+            </div>
+            <!-- Reference Catalog Snapshot (As per visual spec) -->
+            <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-md flex flex-col gap-2">
+              <div class="flex items-center justify-between">
+                <span class="font-label-sm text-label-sm    tracking-wider text-tertiary">Original Record
+                  Archival</span>
+                <span class="font-label-sm text-label-sm text-primary font-semibold">BOA #444605-BZN</span>
+              </div>
+              <div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container-high">
+                <img alt="BIZONANCE INDIA PVT LTD reference profile sheet"
+                  class="w-full h-full object-cover object-top opacity-85 hover:opacity-100 transition-opacity"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGBI0DfapgKgTs6_fXlt3I9r4n2XHFDHHqKSe83sSsQc29c8TmDpv_GoUPeCnsXnlD-x6b-uG6WtbTLPr7zl1jYeHvlwBsbMKy5wghKU5ZzkRpuNrQnUQzjj6hKxBEHtUU6RVoYkHFKP1eJwoYjruLnlk-FuREHAJ5DWpHm6NHGRO-pT7Y44qKXT2xV5J6AcXOOKWW9YVdGr6SKOva71F0KmP_Tw2sxc574wqjCwYlMjKxFMYZemDT1Q">
+              </div>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Archived digital listing registry snapshot
+                for Bizonance India Pvt. Ltd. Amravati HQ.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Simple client interaction for Expand All toggle in services
+      document.getElementById('expandAllBtn')?.addEventListener('click', function () {
+        alert('All 8 Categories and 63+ service offerings expanded.');
+      });
+    </script>
+  </main>
+  <footer class="w-full bg-surface-container-lowest shadow-[0_-1px_6px_rgba(0,0,0,0.03)]">
+    <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-space-lg mb-space-xl">
+        <div class="md:col-span-2 flex flex-col gap-space-sm pr-space-md">
+          <div class="flex items-center gap-space-sm">
+            <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span
+                class="text-on-primary font-headline-sm text-headline-sm font-bold tracking-widest">BOA</span></div>
+            <span class="font-headline-md text-headline-md font-bold text-on-surface">Best of Amravati</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Amravati's premier civic business
+            directory, connecting citizens with trusted verified local enterprises, essential public amenities, and
+            standout neighborhood services.</p>
+        </div>
+        <div class="flex flex-col gap-space-xs"><span
+            class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">Directory
+            Explorer</span>
+          <nav class="flex flex-col gap-space-xs" data-active-classes="text-primary font-semibold"><a
+              class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="home" href="#">Home Portal</a><a
+              class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="services" href="#">Local Services</a><a aria-current="page"
+              class="transition-colors text-primary font-semibold" data-path="business" href="#">Business
+              Directory</a><a
+              class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="verified-listings" href="#">Verified Listings</a></nav>
+        </div>
+        <div class="flex flex-col gap-space-xs"><span
+            class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-xs">Portal &amp;
+            Support</span>
+          <nav class="flex flex-col gap-space-xs" data-active-classes="text-primary font-semibold"><a
+              class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="about-us" href="#">About Best of Amravati</a><a
+              class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="contact" href="#">Contact Directory Desk</a><a
+              class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="join-us" href="#">Claim Listing (Join Us)</a><a
+              class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="privacy-terms" href="#">Civic Guidelines &amp; Terms</a></nav>
+        </div>
+      </div>
+      <div
+        class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-lg">
+        <p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Best of Amravati (BOA). Built for the
+          Amravati Community. All rights reserved.</p>
+        <div class="flex items-center gap-space-md"><span
+            class="font-label-sm text-label-sm text-on-surface-variant">Amravati, Maharashtra</span>
+          <div class="w-2 h-2 rounded-full bg-primary"></div><span
+            class="font-label-sm text-label-sm text-on-surface-variant">Trusted Directory Network</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+</body>
+
+</html>

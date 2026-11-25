@@ -1,0 +1,38 @@
+[
+  {
+    "id": "enq_1",
+    "name": "Amit Kale",
+    "contact": "+91 9822334455",
+    "email": "amit.kale@gmail.com",
+    "category": "IT & Software",
+    "businessName": "BIZONANCE INDIA PVT. LTD.",
+    "message": "Looking for custom ERP software for local distribution business in Amravati.",
+    "status": "contacted",
+    "remark": "Client called, demo scheduled for Tuesday.",
+    "createdAt": "2026-02-18T10:15:00.000Z"
+  },
+  {
+    "id": "enq_2",
+    "name": "Pooja Wankhede",
+    "contact": "+91 9422887766",
+    "email": "pooja.w@yahoo.com",
+    "category": "Real Estate & Builders",
+    "businessName": "Vidarbha Reality Developers",
+    "message": "Interested in 3 BHK flat near Camp area Amravati. What are current rates?",
+    "status": "pending",
+    "remark": "",
+    "createdAt": "2026-02-19T14:30:00.000Z"
+  },
+  {
+    "id": "enq_3",
+    "name": "Suresh Thakare",
+    "contact": "+91 9890112233",
+    "email": "suresh.t@gmail.com",
+    "category": "Doctors & Healthcare",
+    "businessName": "Apex Diagnostic & Multispeciality Clinic",
+    "message": "Need full body health checkup package details for senior citizens.",
+    "status": "pending",
+    "remark": "",
+    "createdAt": "2026-02-20T08:45:00.000Z"
+  }
+]

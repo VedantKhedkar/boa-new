@@ -1,0 +1,19 @@
+{
+  "name": "best-of-amravati-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Best of Amravati Monorepo Workspace - Frontend, Admin Dashboard, and API Gateway",
+  "scripts": {
+    "dev": "concurrently -k -n \"FRONTEND,ADMIN,API\" -c \"cyan.bold,magenta.bold,yellow.bold\" \"npm run dev:frontend\" \"npm run dev:admin\" \"npm run dev:api\"",
+    "dev:frontend": "npm run dev --prefix bestofamravati.com",
+    "dev:admin": "npm run dev --prefix admin.bestofamravati.com",
+    "dev:api": "npm run dev --prefix api.bestofamravati.com",
+    "start": "npm run dev",
+    "build": "npm run build --prefix bestofamravati.com && npm run build --prefix admin.bestofamravati.com",
+    "seed": "npm run seed --prefix api.bestofamravati.com",
+    "install:all": "npm install --prefix bestofamravati.com && npm install --prefix admin.bestofamravati.com && npm install --prefix api.bestofamravati.com"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

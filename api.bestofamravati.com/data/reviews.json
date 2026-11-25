@@ -1,0 +1,24 @@
+[
+  {
+    "id": "rev_1",
+    "businessId": "biz_1",
+    "businessName": "BIZONANCE INDIA PVT. LTD.",
+    "name": "Aashish Nagdive",
+    "rating": 5,
+    "timeAgo": "4 months ago",
+    "comment": "High quality website development, digital advertising, SEO, and branding solutions for businesses in Amravati.",
+    "status": "approved",
+    "createdAt": "2026-01-20T10:00:00.000Z"
+  },
+  {
+    "id": "rev_2",
+    "businessId": "biz_1",
+    "businessName": "BIZONANCE INDIA PVT. LTD.",
+    "name": "Imagine Creative Photography",
+    "rating": 5,
+    "timeAgo": "a year ago",
+    "comment": "Extremely happy with digital marketing results for our photography business. Creative and prompt team.",
+    "status": "approved",
+    "createdAt": "2026-01-22T11:00:00.000Z"
+  }
+]

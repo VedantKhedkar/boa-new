@@ -1,0 +1,90 @@
+[
+  {
+    "id": "cat_1",
+    "name": "IT & Software",
+    "slug": "it-software",
+    "icon": "terminal",
+    "description": "Software development, web design, digital marketing, and tech solutions.",
+    "featured": true,
+    "status": "active",
+    "businessCount": 18,
+    "createdAt": "2026-01-15T10:00:00.000Z"
+  },
+  {
+    "id": "cat_2",
+    "name": "Doctors & Healthcare",
+    "slug": "healthcare",
+    "icon": "local_hospital",
+    "description": "Multi-speciality hospitals, clinics, diagnostic centers, and pharmacies.",
+    "featured": true,
+    "status": "active",
+    "businessCount": 42,
+    "createdAt": "2026-01-16T11:00:00.000Z"
+  },
+  {
+    "id": "cat_3",
+    "name": "Restaurants & Cafes",
+    "slug": "restaurants",
+    "icon": "restaurant",
+    "description": "Fine dining, family restaurants, bakeries, cafes, and street food.",
+    "featured": true,
+    "status": "active",
+    "businessCount": 35,
+    "createdAt": "2026-01-17T12:00:00.000Z"
+  },
+  {
+    "id": "cat_4",
+    "name": "Real Estate & Builders",
+    "slug": "real-estate",
+    "icon": "home_work",
+    "description": "Property agents, builders, developers, and commercial spaces.",
+    "featured": true,
+    "status": "active",
+    "businessCount": 24,
+    "createdAt": "2026-01-18T09:30:00.000Z"
+  },
+  {
+    "id": "cat_5",
+    "name": "Education & Coaching",
+    "slug": "education",
+    "icon": "school",
+    "description": "Colleges, schools, competitive exam coaching, and training institutes.",
+    "featured": true,
+    "status": "active",
+    "businessCount": 29,
+    "createdAt": "2026-01-19T14:15:00.000Z"
+  },
+  {
+    "id": "cat_6",
+    "name": "Automobile & Garages",
+    "slug": "automobile",
+    "icon": "directions_car",
+    "description": "Car & bike showrooms, authorized service centers, and spare parts.",
+    "featured": false,
+    "status": "active",
+    "businessCount": 19,
+    "createdAt": "2026-01-20T16:00:00.000Z"
+  },
+  {
+    "id": "cat_7",
+    "name": "Beauty & Wellness",
+    "slug": "beauty-wellness",
+    "icon": "spa",
+    "description": "Salons, spas, skincare clinics, and fitness centers.",
+    "featured": false,
+    "status": "active",
+    "businessCount": 22,
+    "createdAt": "2026-01-21T08:45:00.000Z"
+  },
+  {
+    "id": "cat_8",
+    "name": "Legal & Corporate",
+    "slug": "legal-services",
+    "icon": "gavel",
+    "description": "Chartered Accountants, advocates, tax consultants, and notary.",
+    "featured": false,
+    "status": "active",
+    "businessCount": 15,
+    "createdAt": "2026-01-22T13:20:00.000Z"
+  }
+]

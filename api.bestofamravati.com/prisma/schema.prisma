@@ -1,0 +1,141 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ==========================================
+// 1. BUSINESS CATEGORY (Structured for Data Analysis)
+// ==========================================
+model Category {
+  id           String     @id @default(uuid())
+  name         String     @unique
+  slug         String     @unique
+  sector       String     // Macro-Industry: Technology, Healthcare, Hospitality, Construction, etc.
+  icon         String     @default("category")
+  description  String?
+  featured     Boolean    @default(false)
+  status       String     @default("active") // active | inactive
+  sortOrder    Int        @default(0)
+  metadata     Json?      // Analytics metadata: keywords, target demographics, NAICS/NIC codes
+  parentId     String?
+  parent       Category?  @relation("CategoryHierarchy", fields: [parentId], references: [id], onDelete: Cascade)
+  subcategories Category[] @relation("CategoryHierarchy")
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  businesses   Business[]
+  inquiries    Inquiry[]
+
+  @@index([sector])
+  @@index([status])
+  @@index([featured])
+  @@index([parentId])
+}
+
+// ==========================================
+// 2. BUSINESS LISTING (Amravati Commercial Directory)
+// ==========================================
+model Business {
+  id              String    @id @default(uuid())
+  name            String
+  slug            String    @unique
+  categoryId      String
+  category        Category  @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryName    String    // Denormalized for rapid analytical slicing
+  sector          String    // Denormalized macro-sector for BI grouping
+  subCategory     String?   // Niche: e.g. "Custom Software", "Orthopedic Surgery", "Fine Dining"
+  owner           String?
+  phone           String
+  whatsapp        String?
+  email           String?
+  website         String?
+  address         String
+  locality        String    // Amravati Area: "Saturna", "Camp", "Rajapeth", "Badnera Road", etc.
+  pincode         String    @default("444601")
+  city            String    @default("Amravati")
+  state           String    @default("Maharashtra")
+  establishedYear Int?
+  employeeCount   String?   // "1-10", "11-50", "50-200", "200+" for economic analysis
+  pricingTier     String?   // "Budget", "Moderate", "Premium", "Luxury"
+  rating          Float     @default(5.0)
+  reviewCount     Int       @default(0)
+  status          String    @default("verified") // verified | pending | rejected
+  featured        Boolean   @default(false)
+  verified        Boolean   @default(true)
+  services        Json?     // Array of specific specializations / services
+  tags            Json?     // Search & category tags array
+  logoUrl         String?   // Transparent company logo URL
+  coverImage      String?   // Cover / banner image URL
+  tagline         String?   // Short headline under business name
+  about           String?   // Full About Us description
+  timings         String?   @default("Open · Closes 7:00 PM")
+  directionsUrl   String?   // Google Maps link
+  socialLinks     Json?     // { instagram, linkedin, facebook, youtube, twitter }
+  products        Json?     // Array of product/package names
+  photos          Json?     // Array of photo gallery URLs
+  videos          Json?     // Array of YouTube/video URLs
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  inquiries       Inquiry[]
+  reviews         Review[]
+
+  @@index([categoryId])
+  @@index([sector])
+  @@index([locality])
+  @@index([status])
+  @@index([featured])
+}
+
+// ==========================================
+// 3. INQUIRIES & RESIDENT LEADS
+// ==========================================
+model Inquiry {
+  id           String    @id @default(uuid())
+  businessId   String?
+  business     Business? @relation(fields: [businessId], references: [id], onDelete: SetNull)
+  businessName String?
+  categoryId   String?
+  category     Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  categoryName String?
+  sector       String?   // For categorical lead demand analytics
+  name         String
+  contact      String
+  email        String?
+  message      String
+  status       String    @default("pending") // pending | contacted | resolved
+  remark       String?
+  leadSource   String    @default("directory_portal") // portal, search, category_page
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([status])
+  @@index([sector])
+  @@index([businessId])
+}
+
+// ==========================================
+// 4. TESTIMONIALS & REVIEWS
+// ==========================================
+model Review {
+  id           String    @id @default(uuid())
+  businessId   String
+  business     Business  @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  businessName String
+  name         String
+  rating       Int       @default(5)
+  timeAgo      String?
+  comment      String
+  status       String    @default("approved") // approved | flagged | pending
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([businessId])
+  @@index([rating])
+  @@index([status])
+}
